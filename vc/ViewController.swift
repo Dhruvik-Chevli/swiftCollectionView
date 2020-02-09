@@ -28,7 +28,7 @@ class CustomCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
-        iv.image = #imageLiteral(resourceName: "image2")
+        //iv.image = #imageLiteral(resourceName: "image2")
         //iv.backgroundColor = .red
         iv.layer.cornerRadius = 12
         return iv
@@ -60,12 +60,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         CustomData(title: "image1", image: #imageLiteral(resourceName: "image2"), url:"/image1"),
         CustomData(title: "image2", image: #imageLiteral(resourceName: "image1"), url:"/image2"),
         CustomData(title: "image3", image: #imageLiteral(resourceName: "image3"), url:"/image3"),
+        CustomData(title:"image4", image: #imageLiteral(resourceName: "image2"), url:"/image4")
         
     ]
     
     fileprivate lazy var collectionView: UICollectionView = {
         let layout=UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        //layout.scrollDirection = .horizontal
         let cv=UICollectionView(frame: .zero, collectionViewLayout:layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
