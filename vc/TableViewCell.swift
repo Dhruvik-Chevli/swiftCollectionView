@@ -25,11 +25,11 @@ class TableViewCell: UITableViewCell {
     }
     func set(Photo: eachPhoto){
         photo.image = Photo.image
-        likes.text = String(Photo.likes)
-        comments.text = String(Photo.comments)
+        likes.text = String(Photo.likes)+" likes"
+        comments.text = "Comments: "+String(Photo.comments)
     }
     func configureImageView(){
-        photo.layer.cornerRadius = 10
+        //photo.layer.cornerRadius = 10
         photo.clipsToBounds = true
     }
     func configureLabels(){
@@ -41,7 +41,7 @@ class TableViewCell: UITableViewCell {
     func setImageConstraints(){
         photo.translatesAutoresizingMaskIntoConstraints = false
         photo.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
-        photo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        photo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -45).isActive = true
         photo.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         photo.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
@@ -50,12 +50,13 @@ class TableViewCell: UITableViewCell {
         likes.translatesAutoresizingMaskIntoConstraints = false
         likes.topAnchor.constraint(equalTo: photo.bottomAnchor, constant: 4).isActive = true
         likes.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
-        likes.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5).isActive = true
-        likes.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 50).isActive = true
+        likes.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25).isActive = true
+        //likes.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 50).isActive = true
+        likes.widthAnchor.constraint(equalToConstant: 100).isActive = true
         comments.translatesAutoresizingMaskIntoConstraints = false
         comments.topAnchor.constraint(equalTo: photo.bottomAnchor, constant: 4).isActive = true
         comments.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
-        comments.leadingAnchor.constraint(equalTo: likes.trailingAnchor, constant: 5).isActive = true
+        comments.leadingAnchor.constraint(equalTo: likes.trailingAnchor, constant: 100).isActive = true
         comments.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5).isActive = true
         
     }
